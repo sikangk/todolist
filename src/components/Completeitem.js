@@ -13,10 +13,10 @@ const CompleteText = styled.div`
   font-size: 20px;
   color: #495057;
 `;
-function Completeitem({ id, done, text }) {
+function Completeitem({ id, complete, text }) {
   return (
     <CompleteitemBlock>
-      {done && <CompleteText>{text}</CompleteText>}
+      {complete && <CompleteText>{text}</CompleteText>}
     </CompleteitemBlock>
   );
 }

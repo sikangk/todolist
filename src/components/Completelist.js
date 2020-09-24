@@ -31,7 +31,7 @@ function Completelist() {
           key={todo.id}
           id={todo.id}
           text={todo.text}
-          done={todo.done}
+          complete={todo.complete}
         />
       ))}
     </CompleteListBlock>

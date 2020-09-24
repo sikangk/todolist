@@ -23,10 +23,25 @@ const AddButton = styled.button`
 
   transition: 0.125s all ease-in;
 
+  &:hover {
+    background: #63e6be;
+  }
+  &:active {
+    background: #20c997;
+  }
+
   ${(props) =>
     props.open &&
     css`
+      &:hover {
+        background: #ff8787;
+      }
+
+      &:active {
+        background: #fa5252;
+      }
       transform: rotate(45deg);
+      color: red;
     `}
 `;
 const InsertFormPositioner = styled.div`
@@ -34,6 +49,8 @@ const InsertFormPositioner = styled.div`
   bottom: 0;
   left: 0;
   position: absolute;
+
+  transition: 0.125s all ease-in;
 `;
 
 const InsertForm = styled.form`
@@ -64,9 +81,13 @@ const SubmitButton = styled.button`
   margin-top: 10px;
   width: 50px;
   height: 25px;
-  background: orange;
+  background: #f8f0fa;
+  border: 1px solid #e9ecef;
   &:hover {
-    background: pink;
+    background: #63e6be;
+  }
+  &:active {
+    background: #20c997;
   }
 `;
 
@@ -92,6 +113,7 @@ function Create() {
         id: nextId.current,
         text: value,
         done: false,
+        complete: false,
       },
     });
     nextId.current = nextId.current + 1;

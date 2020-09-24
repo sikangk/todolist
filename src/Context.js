@@ -8,7 +8,9 @@ function todoReducer(state, action) {
       return state.concat(action.todo);
     case "TOGGLE":
       return state.map((todo) =>
-        todo.id === action.id ? { ...todo, done: !todo.done } : todo
+        todo.id === action.id
+          ? { ...todo, done: !todo.done, complete: !todo.complete }
+          : todo
       );
     case "REMOVE":
       return state.filter((todo) => todo.id !== action.id);
